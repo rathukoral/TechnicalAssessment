@@ -3,9 +3,8 @@
 
 # Requirements
 To use this test suite, you'll need to have the following software installed:
-
-Node.js
-WebdriverIO
+- Node.js (Version 16 or higher )
+- WebdriverIO
 
 # Installation
 To install the dependencies for this test suite, run the following command:
