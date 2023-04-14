@@ -8,16 +8,22 @@ To use this test suite, you'll need to have the following software installed:
 
 # Installation
 To install the dependencies for this test suite, run the following command:
-npm install
-
+- npm install
+- Local PC Chrome version should match with the given version in package.json
 # Configuration
 This test suite is pre-configured to run tests using the configuration file located in ./wdio.conf.js. You can modify this file to configure the test suite to your needs.
 
 # Running the Tests
 To run the tests, use the following command:
-npm run wdio
+- npm run wdio
 
 This will launch the tests using the configuration specified in the wdio.conf.js file.
+
+# View Allure Report
+To view the report , use the following command:
+- allure generate allure-results && allure open
+
+This will open up a new browser window and will display all the results in a beautiful HTML format.
 
 # Dependencies
 This test suite has the following dependencies:
