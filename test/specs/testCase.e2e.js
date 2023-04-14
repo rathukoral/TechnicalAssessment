@@ -9,7 +9,8 @@ const allureReporter = require('@wdio/allure-reporter')
 
 describe('Test Assessment', () => {
     it('search product on Amazon', async () => {
-        allureReporter.addFeature('Feature')
+        allureReporter.addFeature('Amazon Add to Cart')
+
         const props = await new Promise((resolve, reject) => {
             properties.parse('config.properties', { path: true }, (err, data) => {
               if (err) {
@@ -25,7 +26,6 @@ describe('Test Assessment', () => {
 
 
         await browser.url(props.app_url);
-
        
         await HomePage.selectACategory(testData.searchDropdown); 
         await HomePage.searchAKeyword(testData.searchText);
@@ -37,7 +37,7 @@ describe('Test Assessment', () => {
         UNITPRICE = UNITPRICE.replace(/^./, "");
         console.log("Unit price of the selected product is   -  "+ await UNITPRICE);
         await ProductDetails.verifyProductTile(TITLE);
-        await ProductDetails.selectAQuantity(2);
+        await ProductDetails.selectAQuantity(testData.quantity);
         await ProductDetails.clickAddToCart();
         await CartPage.verifyAddedToCartTextDisplay();
         await CartPage.clickGoToCart();
@@ -47,10 +47,10 @@ describe('Test Assessment', () => {
         let subTotal =  parseFloat(UNITPRICE)*2;
         subTotal = subTotal.toLocaleString("en",{useGrouping: false,minimumFractionDigits: 2});
         await ShoppingCart.verifySubTotal(subTotal);
-        await ShoppingCart.verifyTheQuantity("2");
+        await ShoppingCart.verifyTheQuantity(testData.quantity);
 
         await ShoppingCart.deleteCart();
-        await ShoppingCart.verifySubTotal("0.00");
+        await ShoppingCart.verifySubTotal(testData.subTotalAfterDelete);
          
      }) 
 
