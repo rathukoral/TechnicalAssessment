@@ -1,0 +1,10 @@
+{
+    "testCaseOne":{
+        "searchDropdown":"search-alias=stripbooks-intl-ship",
+        "searchText":"Automation",
+        "reviews":"4",
+        "language":"English",
+        "productIndex":"2",
+        "subTotalAfterDelete":"0.00"
+    }
+}
