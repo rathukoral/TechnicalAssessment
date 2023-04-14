@@ -9,7 +9,7 @@ To use this test suite, you'll need to have the following software installed:
 # Installation
 To install the dependencies for this test suite, run the following command:
 - npm install
-- Local PC Chrome version should match with the given version in package.json
+- Local PC Chrome version should match with the given chrome driver version in package.json (If you have chorme version 112 in your local PC please update the package.JSON with chromedriver version 112) 
 # Configuration
 This test suite is pre-configured to run tests using the configuration file located in ./wdio.conf.js. You can modify this file to configure the test suite to your needs.
 
